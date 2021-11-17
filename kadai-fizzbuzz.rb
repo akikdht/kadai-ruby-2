@@ -1,18 +1,19 @@
 num_max=100
 value=0
-num_max.times do
+(1..num_max).each do |num|
 value=value+1
 #fizzbuzz(value)
 def fizzbuzz(num)
-	if num%3==0
-		puts "Fizz"
-	elsif num%5==0
-		puts "Buzz"
+	if num%3==0 && num%(3*5)!=0
+		result="Fizz"
+	elsif num%5==0 && num%(3*5)!=0
+		result="Buzz"
 	elsif num%(3*5)==0
-		puts "FizzBuzz"
+		result="FizzBuzz"
 	else
-		puts num
+		result=num
 	end
+	return result
 end
-fizzbuzz(value)
+puts fizzbuzz(value)
 end
